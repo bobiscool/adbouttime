@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.onload = function() {
+
+           timer = setInterval( function fn() {
+                var myTime = new Date();
+                // 以上数字类型是对象
+                var iYear = myTime.getFullYear();
+                var iMonth = myTime.getMonth() + 1;
+                var iDate = myTime.getDate();
+                var iWeek = myTime.getDay();
+                var iHou = myTime.getHours();
+                var iMin = myTime.getMinutes();
+                var iSec = myTime.getSeconds();
+                var str = '';
+                var oBody = document.body;
+                iHou.ti = 0;
+                iMin.ti = 0;
+                iSec.ti = 0;
+                //以上 数字类型都是数字
+
+                switch (iWeek) {
+                    case 0:
+                        iWeek = '星期日';
+                    case 1:
+                        iWeek = '星期一';
+                    case 2:
+                        iWeek = '星期二';
+                    case 3:
+                        iWeek = '星期三';
+                    case 4:
+                        iWeek = '星期四';
+                    case 5:
+                        iWeek = '星期五';
+                    case 6:
+                        iWeek = '星期六';
+
+                };
+
+
+               function jiage0(obj){
+                   if(obj<10){
+                         return '0'+obj;
+
+                   }else {
+                        return ''+ obj;
+                   }
+
+               };
+
+
+
+                str = iYear + '年' + iMonth + '月' + iDate + '日' + iWeek + jiage0(iHou)+ ':' +jiage0(iMin)+':' + jiage0(iSec);
+
+                oBody.innerHTML = str;
+
+            },50);
+
+
+
+
+
+
+
+        };
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
